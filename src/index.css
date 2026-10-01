@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+
+/* Dark mode = a `dark` class on <html> (set by src/lib/theme.ts). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Palette tokens. Light uses the user's light palette, dark the dark one. */
+:root {
+  --bg: #eadfce;
+  --surface: #f5efe4;
+  --surface-2: #cbd8ee;
+  --primary: #1a488e;
+  --on-primary: #f5efe4;
+  --accent: #97b2de;
+  --text: #092147;
+  --border: #97b2de;
+  --positive: #578f53;
+  --warning: #e9c46a;
+  --danger: #d1495b;
+  color-scheme: light;
+}
+
+:root.dark {
+  --bg: #1f2833;
+  --surface: #112d32;
+  --surface-2: #254e58;
+  --primary: #88bdbc;
+  --on-primary: #1f2833;
+  --accent: #88bdbc;
+  --text: #edeae3;
+  --border: #4f4a41;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-accent: var(--accent);
+  --color-ink: var(--text);
+  --color-line: var(--border);
+  --color-positive: var(--positive);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-muted: color-mix(in srgb, var(--text) 68%, var(--bg));
+  --font-sans: ui-sans-serif, -apple-system, 'SF Pro Text', 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* iOS Safari zooms the page when a focused input is under 16px. */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
