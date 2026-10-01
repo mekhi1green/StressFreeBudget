@@ -27,8 +27,8 @@ jobs:
         env:
           # Set these under Settings > Secrets and variables > Actions > Variables once Supabase exists.
           # Both are safe to expose to browsers; Row Level Security protects the data.
-          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
+          VITE_SUPABASE_URL: ${{ https://tqtogeiiuavrgtlkxwte.supabase.co }}
+          VITE_SUPABASE_ANON_KEY: ${{ sb_publishable_Kxjsmo4UkHHKiTdvaR5Ezw_zU7J32yq }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
