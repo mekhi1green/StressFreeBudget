@@ -1,4 +1,5 @@
 import { HashRouter, Route, Routes } from 'react-router-dom'
+import { BackendStatus } from './components/BackendStatus'
 import { ThemeSwitch } from './components/ThemeSwitch'
 
 function Home() {
@@ -7,6 +8,7 @@ function Home() {
       <h1 className="text-4xl font-bold tracking-tight text-primary">StressFreeBudget</h1>
       <p className="text-muted">Budgeting for two. Under construction.</p>
       <ThemeSwitch />
+      <BackendStatus />
     </main>
   )
 }
